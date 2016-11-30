@@ -16,7 +16,10 @@ public class PlateCheck : MonoBehaviour {
 
 	void OnCollisionEnter (Collision coll) {
 		GameObject collidedWith = coll.gameObject;
-		Debug.Log ("collidedWith = " + collidedWith);
+		Debug.Log ("collidedWith = " + collidedWith.tag);
 		gameManager.NextIngredient (collidedWith);
+		if (collidedWith.CompareTag ("Trash")) {
+			Destroy (this);
+		}
 	}
 }

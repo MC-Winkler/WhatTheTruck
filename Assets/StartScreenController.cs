@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class StartScreenController : MonoBehaviour {
 	[SerializeField]
@@ -23,4 +24,9 @@ public class StartScreenController : MonoBehaviour {
 	public void Back(){
 		control.SetActive (false);
 	}
+
+	public void StartGame(){
+		SceneManager.LoadScene ("Tutorial");
+	}
+
 }

@@ -56,6 +56,7 @@
      <Compile Include="Assets\HandPhysicsController\Scripts\Main\HandPhysicsCamera.cs" />
      <Compile Include="Assets\HandPhysicsController\Scripts\Main\HandPhysicsController.cs" />
      <Compile Include="Assets\HandPhysicsController\Scripts\Main\HandPhysicsStandaloneInput.cs" />
+     <Compile Include="Assets\Resources\Bug.cs" />
      <Compile Include="Assets\Scripts\MiniGame\Controller.cs" />
      <Compile Include="Assets\Scripts\MiniGame\MiniGameManager.cs" />
      <Compile Include="Assets\Scripts\MiniGame\PlateCheck.cs" />

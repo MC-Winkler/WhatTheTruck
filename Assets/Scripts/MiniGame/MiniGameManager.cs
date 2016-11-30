@@ -5,12 +5,25 @@ using System.Collections.Generic;
 // Coded by Charlie
 public class MiniGameManager : MonoBehaviour {
 
+	[SerializeField] public GameObject[] waypoints;
+	private GameObject bugPrefab;
+	public Controller control;
+
 	[SerializeField] private List<GameObject> recipeObjects = new List<GameObject>();
 	private int currentIndex;
 
 	// Use this for initialization
 	void Start () {
 		currentIndex = 0;
+		GameObject bug = Instantiate (Resources.Load("Bug")) as GameObject;
+		bug.transform.position = waypoints [0].transform.position;
+
+		waypoints = GameObject.FindGameObjectsWithTag ("Waypoint");
+
+		/*GameObject scoreObject = GameObject.Find ("Score");
+		GUIText scoreGT = scoreObject.GetComponent<GUIText> ();
+		int score = int.Parse (scoreGT.text);
+		scoreGT.text = score.ToString();*/
 	}
 
 	// Update is called once per frame
@@ -34,6 +47,7 @@ public class MiniGameManager : MonoBehaviour {
 	}
 		
 	void Finish() {
+		control.EndScene ();
 		Debug.Log ("Finishing");
 	}
 }

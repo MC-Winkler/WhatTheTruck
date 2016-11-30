@@ -89,6 +89,24 @@ public class Controller : MonoBehaviour
 		instructions.SetActive (false);
 	}
 
+	public void EndSceneTutorial(){
+		SceneManager.LoadScene ("CookingMiniGame");
+		Time.timeScale = 1;
+		Cursor.visible = false;
+	}
+
+	public void StartGame(){
+		SceneManager.LoadScene ("Tutorial");
+		Time.timeScale = 1;
+		Cursor.visible = false;
+	}
+
+	public void EndSceneLvl2(){
+		SceneManager.LoadScene ("Level3");
+		Time.timeScale = 1;
+		Cursor.visible = false;
+	}
+
 	public void EndSceneContinue(){
 		SceneManager.LoadScene ("StartScene");
 	}

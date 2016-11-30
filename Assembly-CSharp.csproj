@@ -59,13 +59,14 @@
      <Compile Include="Assets\Scripts\MiniGame\Controller.cs" />
      <Compile Include="Assets\Scripts\MiniGame\MiniGameManager.cs" />
      <Compile Include="Assets\Scripts\MiniGame\PlateCheck.cs" />
+     <Compile Include="Assets\StartScreenController.cs" />
      <Compile Include="Assets\UncookedPatty.cs" />
      <None Include="Assets\HandPhysicsController\Readme.txt" />
- <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -45,8 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Canvas.cs" />
-     <Compile Include="Assets\Floor.cs" />
      <Compile Include="Assets\HandPhysicsController\Scripts\Elements\AttachedObject.cs" />
      <Compile Include="Assets\HandPhysicsController\Scripts\Elements\Finger.cs" />
      <Compile Include="Assets\HandPhysicsController\Scripts\Elements\FingerPart.cs" />
@@ -57,11 +55,13 @@
      <Compile Include="Assets\HandPhysicsController\Scripts\Main\HandPhysicsController.cs" />
      <Compile Include="Assets\HandPhysicsController\Scripts\Main\HandPhysicsStandaloneInput.cs" />
      <Compile Include="Assets\Resources\Bug.cs" />
-     <Compile Include="Assets\Scripts\MiniGame\Controller.cs" />
-     <Compile Include="Assets\Scripts\MiniGame\MiniGameManager.cs" />
-     <Compile Include="Assets\Scripts\MiniGame\PlateCheck.cs" />
-     <Compile Include="Assets\StartScreenController.cs" />
-     <Compile Include="Assets\UncookedPatty.cs" />
+     <Compile Include="Assets\Scripts\Canvas.cs" />
+     <Compile Include="Assets\Scripts\Controller.cs" />
+     <Compile Include="Assets\Scripts\Floor.cs" />
+     <Compile Include="Assets\Scripts\MiniGameManager.cs" />
+     <Compile Include="Assets\Scripts\PlateCheck.cs" />
+     <Compile Include="Assets\Scripts\StartScreenController.cs" />
+     <Compile Include="Assets\Scripts\UncookedPatty.cs" />
      <None Include="Assets\HandPhysicsController\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

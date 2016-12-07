@@ -69,7 +69,7 @@ public class MiniGameManager : MonoBehaviour {
 
 		string[] level1 = {"Place the apple on the plate"};
 		string[] level2 = {"Place a piece of bread on the plate",
-			"Place the hame on the bread", "Place the cheese on the ham",
+			"Place the ham on the bread", "Place the cheese on the ham",
 			"Place the lettuce on the cheese", "Finish the sandwich with the other piece of bread"};
 		string[] level3 = {"Place the bottom bun on the plate", 
 			"Cook the hamburger on the grill and then put it on the bun",

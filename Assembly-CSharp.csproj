@@ -61,6 +61,8 @@
      <Compile Include="Assets\Scripts\MiniGameManager.cs" />
      <Compile Include="Assets\Scripts\PlateCheck.cs" />
      <Compile Include="Assets\Scripts\StartScreenController.cs" />
+     <Compile Include="Assets\Scripts\Toast.cs" />
+     <Compile Include="Assets\Scripts\ToasterBottom.cs" />
      <Compile Include="Assets\Scripts\UncookedPatty.cs" />
      <None Include="Assets\HandPhysicsController\Readme.txt" />
  <Reference Include="UnityEngine.UI">

@@ -43,8 +43,8 @@ public class MiniGameManager : MonoBehaviour {
 	}
 		
 	public void NextIngredient (GameObject collidedWith) {
-		GameObject nextInRecipe = (GameObject) recipeObjects [currentIndex + 1];
 		Debug.Log("CollidedWith tag = " + collidedWith.tag);
+		GameObject nextInRecipe = (GameObject) recipeObjects [currentIndex + 1];
 		Debug.Log("Next tag in recipe = " + nextInRecipe.tag);
 		if (collidedWith.CompareTag(nextInRecipe.tag)){
 			if (currentIndex == recipeObjects.Count - 2) {
@@ -75,9 +75,11 @@ public class MiniGameManager : MonoBehaviour {
 			"Cook the hamburger on the grill and then put it on the bun",
 			"Add the lettuce to the burger", "Add the tomato to the burger",
 			"Finish the burger by adding the top bun"};
+		string[] level4 = {"Put both pieces of bread in the toaster. The toaster will toast them. Once they're toasted, put them on the plate"};
 
 		instructions.Add(level1);
 		instructions.Add(level2);
 		instructions.Add(level3);
+		instructions.Add(level4);
 	}
 }

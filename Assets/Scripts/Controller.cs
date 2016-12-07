@@ -34,6 +34,9 @@ public class Controller : MonoBehaviour
 		pause.SetActive (false);
 		droppedFood.SetActive (false);
         timeOn = true;
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+
     }
 
 	public void ControlMenu(){
@@ -83,6 +86,7 @@ public class Controller : MonoBehaviour
 
 	public void EndScene(){
 		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
 		Time.timeScale = 0;
 		end.SetActive (true);
 		menu.SetActive (false);
@@ -94,6 +98,7 @@ public class Controller : MonoBehaviour
 		SceneManager.LoadScene (nextScene);
 		Time.timeScale = 1;
 		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	public void StartGame(){
@@ -127,6 +132,7 @@ public class Controller : MonoBehaviour
 				pause.SetActive (true);
 				instructions.SetActive (false);
 				Cursor.visible = true;
+				Cursor.lockState = CursorLockMode.None;
 			}
 		} else {
 			if (Input.GetKeyDown ("p")) {
@@ -136,6 +142,7 @@ public class Controller : MonoBehaviour
 				instructions.SetActive (true);
 				pause.SetActive (false);
 				Cursor.visible = false;
+				Cursor.lockState = CursorLockMode.Locked;
 			}
 		}
 

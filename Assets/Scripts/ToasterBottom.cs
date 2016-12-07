@@ -4,7 +4,12 @@ using System.Collections;
 public class ToasterBottom : MonoBehaviour {
 
 	private ArrayList theBreads;
-	private int numToasted = 0;
+	private float velocity = 0;
+	private float deltaY = 0;
+	private bool alreadyToasted = false;
+	[SerializeField] private float springSpeed = 6f;
+	[SerializeField] private float heightLimit = 1.5f;
+	static int numToasted = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -13,18 +18,27 @@ public class ToasterBottom : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		Vector3 pos = transform.position;
+		if (deltaY < heightLimit) {
+			pos.y += velocity * Time.deltaTime;
+			transform.position = pos;
+			deltaY += velocity * Time.deltaTime;
+		}
+
+		if (numToasted == 2){
+			StartCoroutine(LaunchToast());
+		}	
 	}
 
 	void OnCollisionEnter(Collision coll) {
 		GameObject collidedWith = coll.gameObject;
 		if (collidedWith.CompareTag ("Bread")) {
 			StartCoroutine(ToastBread(collidedWith));
-		} else if (collidedWith.CompareTag("Toast")){
+		} else if (collidedWith.CompareTag("Toast") && !alreadyToasted){
+			alreadyToasted = true;
 			numToasted ++;
-			if (numToasted == 2){
-				StartCoroutine(LaunchToast());
-			}	
+			Debug.Log ("numToasted = " + numToasted);
+
 		}
 	}
 
@@ -40,5 +54,6 @@ public class ToasterBottom : MonoBehaviour {
 
 	private IEnumerator LaunchToast() {
 		yield return new WaitForSeconds(1);
+		velocity += springSpeed;
 	}
 }

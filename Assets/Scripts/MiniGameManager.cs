@@ -24,7 +24,7 @@ public class MiniGameManager : MonoBehaviour {
 
 		GenerateInstructions();
 		currentLevelInstructions = (string[]) instructions[currentSceneIndex];
-		instructionText.text = "Current task:\n" + currentLevelInstructions[0];
+		instructionText.text = currentLevelInstructions[0];
 
 		//GameObject bug = Instantiate (Resources.Load("Bug")) as GameObject;
 		//bug.transform.position = waypoints [0].transform.position;
@@ -53,7 +53,7 @@ public class MiniGameManager : MonoBehaviour {
 				GameObject currentIngedient = (GameObject) recipeObjects [currentIndex];
 				currentIngedient.GetComponent<PlateCheck> ().enabled = false;
 				currentIndex++;	
-				instructionText.text = "Current task:\n" + currentLevelInstructions[currentIndex];
+				instructionText.text = currentLevelInstructions[currentIndex];
 				Debug.Log ("new index = " + currentIndex);
 			}
 		}

@@ -5,7 +5,15 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField]
+	[SerializeField]
+	private GameObject tutorial;
+	[SerializeField]
+	private GameObject movement;
+	[SerializeField]
+	private GameObject rotation;
+	[SerializeField]
+	private GameObject grab;
+	[SerializeField]
     private GameObject menu;
     [SerializeField]
     private GameObject instructions;
@@ -26,6 +34,48 @@ public class Controller : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		Scene scene = SceneManager.GetActiveScene ();
+		if (scene == SceneManager.GetSceneByName ("Tutorial")) {
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
+			TutorialStart ();
+
+		} else {
+			StartTheScene ();
+		}
+    }
+
+	public void TutorialStart(){
+		tutorial.SetActive (true);
+		Cursor.visible = true;
+		Time.timeScale = 0;
+		Cursor.lockState = CursorLockMode.None;
+
+	}
+
+	public void TutorialStartButton(){
+		tutorial.SetActive (false);
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+		menu.SetActive (true);
+		Time.timeScale = 1;
+		timeOn = true;
+		StartCoroutine (TutorialInstructions ());
+	}
+
+	IEnumerator TutorialInstructions(){
+		movement.SetActive (true);
+		yield return new WaitForSeconds (7);
+		movement.SetActive (false);
+		rotation.SetActive (true);
+		yield return new WaitForSeconds (7);
+		rotation.SetActive (false);
+		grab.SetActive (true);
+		yield return new WaitForSeconds (7);
+		grab.SetActive (false);
+		instructions.SetActive (true);
+	}
+	public void StartTheScene(){
 		menu.SetActive (true);
 		instructions.SetActive (true);
 		quit.SetActive (false);
@@ -33,11 +83,10 @@ public class Controller : MonoBehaviour
 		end.SetActive (false);
 		pause.SetActive (false);
 		droppedFood.SetActive (false);
-        timeOn = true;
+		timeOn = true;
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
-
-    }
+	}
 
 	public void ControlMenu(){
 		pause.SetActive (false);
@@ -72,6 +121,7 @@ public class Controller : MonoBehaviour
 		instructions.SetActive (true);
 		pause.SetActive (false);
 		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	public void QuitNo(){
@@ -81,7 +131,8 @@ public class Controller : MonoBehaviour
 		
 	public void QuitYes(){
 		quit.SetActive (false);
-		EndScene ();
+		Time.timeScale = 1;
+		SceneManager.LoadScene ("StartScene");
 	}
 
 	public void EndScene(){
@@ -125,7 +176,7 @@ public class Controller : MonoBehaviour
 		}
 
 		if (timeOn) {
-			if (Input.GetKeyDown ("p")) {
+			if (Input.GetKey (KeyCode.Escape)) {
 				timeOn = !timeOn;
 				Time.timeScale = 0;
 				menu.SetActive (false);
@@ -134,53 +185,7 @@ public class Controller : MonoBehaviour
 				Cursor.visible = true;
 				Cursor.lockState = CursorLockMode.None;
 			}
-		} else {
-			if (Input.GetKeyDown ("p")) {
-				timeOn = !timeOn;
-				Time.timeScale = 1;
-				menu.SetActive (true);
-				instructions.SetActive (true);
-				pause.SetActive (false);
-				Cursor.visible = false;
-				Cursor.lockState = CursorLockMode.Locked;
-			}
-		}
-
-//		if (!exit)
-//        {
-//            if (Input.GetKeyDown("p"))
-//            {
-//                isOn = !isOn;
-//                instructions.SetActive(isOn);
-//                menu.SetActive(!isOn);
-//            }
-//
-//            if (Input.GetKeyDown("q"))
-//            {
-//                quit.SetActive(true);
-//                instructions.SetActive(false);
-//                menu.SetActive(false);
-//                Time.timeScale = 0;
-//                exit = true;
-//            }
-//        }
-//        else
-//        {
-//            if (Input.GetKeyDown("y"))
-//            {
-//                SceneManager.LoadScene("Truck");
-//                Time.timeScale = 1;
-//            }
-//            if (Input.GetKeyDown("n"))
-//            {
-//                Time.timeScale = 1;
-//                exit = false;
-//                quit.SetActive(false);
-//                instructions.SetActive(isOn);
-//                menu.SetActive(!isOn);
-//
-//            }
-//        }
+		} 
     }
 }
 

@@ -64,7 +64,9 @@
      <Compile Include="Assets\Scripts\StartScreenController.cs" />
      <Compile Include="Assets\Scripts\Toast.cs" />
      <Compile Include="Assets\Scripts\ToasterBottom.cs" />
+     <Compile Include="Assets\Scripts\TutorialController.cs" />
      <Compile Include="Assets\Scripts\UncookedPatty.cs" />
+     <Compile Include="Assets\lvlController.cs" />
      <None Include="Assets\HandPhysicsController\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
